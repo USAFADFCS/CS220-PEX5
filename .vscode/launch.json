@@ -5,34 +5,16 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "gcc - Windows+WSL/Ubuntu",
-            "type": "cppdbg",
+            "name": "cl.exe - Build and debug active file",
+            "type": "cppvsdbg",
             "request": "launch",
-            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${fileDirname}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "gdb",
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "preLaunchTask": "C/C++: gcc build active file",
-            "miDebuggerPath": "/usr/bin/gdb"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "name": "lldb - MacOS",
-            "program": "${workspaceFolder}/${fileBasenameNoExtension}",
-            "args": ["2", "2"],
             "cwd": "${workspaceFolder}",
-            "preLaunchTask": "C/C++: gcc build active file"
+            "environment": [],
+            "externalConsole": true,
+            "preLaunchTask": "build"
         }
     ]
 }
